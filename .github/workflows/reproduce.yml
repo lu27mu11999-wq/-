@@ -1,0 +1,15 @@
+name: Reproduce synthetic experiment
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 dynamic-face-redaction/dynamic-face-redaction/experiment.py
